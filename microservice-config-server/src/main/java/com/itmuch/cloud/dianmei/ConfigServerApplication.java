@@ -7,7 +7,11 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 /**
  * 通过@EnableConfigServer注解激活配置服务.
  * 说明：
+<<<<<<< HEAD
  * 在application.yml中有个git.uri的配置，目前配置的是https://github.com/dianmei/dianmei_config/
+=======
+ * 在application.yml中有个git.uri的配置，目前配置的是https://github.com/eacdy/spring-cloud-study/
+>>>>>>> refs/remotes/origin/master
  * 获取git上的资源信息遵循如下规则：
  * /{application}/{profile}[/{label}]
  * /{application}-{profile}.yml
