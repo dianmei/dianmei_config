@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: microservice-api-gateway
+server:
+  port: 8050
+logging:
+  level:
+    org.springframework.security: INFO
+    com.netflix.discovery: 'OFF'
+eureka:
+  instance:
+    hostname: gateway
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+             
+zuul:
+  #ignored-services: microservice-provider-user                        # 需要忽视的服务(配置后将不会被路由)
+  routes:
+    user:                                                            # 可以随便写，在zuul上面唯一即可；当这里的值 = service-id时，service-id可以不写。
+       path: /user/**                                                # 想要映射到的路径
+       service-id: microservice-provider-user     # Eureka中的serviceId
+    person:
+       path: /person/**
+       service-id: microservice-provider-person
+    first:
+      path: /first/**
+      url: http://first.example.com
+    second:
+      path: /second/**
+      url: forward:/second
+    third:
+      path: /third/**
+      url: forward:/3rd
+    legacy:
+      path: /**
+      url: http://legacy.example.com       
+
