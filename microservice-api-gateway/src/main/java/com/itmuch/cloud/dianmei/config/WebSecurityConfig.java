@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 /**
- * 使用@@EnableWebSecurity注解激活Security
+ * 使用@@EnableWebSecurity注77激活Security
  * @author linyue
  */
 @Configuration
